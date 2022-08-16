@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bubble</title>
+</head>
+
+<body>
+    <div class="container">
+        <ul id="listItems">
+            <li class="item">Lorem ipsum dolor sit amet. 1 </li>
+            <li class="item">Lorem ipsum dolor sit amet. 2 </li>
+            <li class="item">Lorem ipsum dolor sit amet. 3 </li>
+            <li class="item">Lorem ipsum dolor sit amet. 4 </li>
+        </ul>
+        <button id="add-btn">add list</button>
+    </div>
+    <script>
+        document.getElementById("listItems").addEventListener("click", function (event) {
+            (
+                console.log(event.target.parentNode.removeChild(event.target)));
+            event.stopPropagation();
+
+        });
+        const items = document.getElementsByClassName("item");
+
+        document.getElementById("add-btn").addEventListener("click", function () {
+            const list = document.getElementById("listItems");
+            const li = document.createElement("li");
+            li.innerText = "new comment";
+            list.appendChild(li);
+            li.classList.add("item");
+        });
+        // for (let item of items) {
+        //     item.addEventListener("click", function () {
+        //         event.target.parentNode.removeChild(event.target);
+        //     })
+        // }
+    </script>
+</body>
+
+</html>

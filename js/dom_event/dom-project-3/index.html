@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom project</title>
+</head>
+
+<body>
+    <h2 id="text">default text</h2>
+    <input id="input-field" type="text" placeholder="type delet">
+    <button id="delet-btn" disabled>Delete</button>
+    <script>
+        document.getElementById("input-field").addEventListener("keyup", function (event) {
+            // // optio 1
+            // const inputText = document.getElementById("input-field");
+            // const deletBtn = document.getElementById("delet-btn");
+            // console.log(inputText.value);
+            // if (inputText.value === "delet") {
+            //     deletBtn.removeAttribute("disabled");
+            // }
+            // else {
+            //     deletBtn.setAttribute("disabled", true);
+            // }
+
+            // Option 2
+            const inputText = document.getElementById("input-field");
+            const deletBtn = document.getElementById("delet-btn");
+            if (event.target.value === "delet") {
+                deletBtn.removeAttribute("disabled");
+            }
+            else {
+                deletBtn.setAttribute("disabled", true);
+            }
+
+        });
+        document.getElementById("delet-btn").addEventListener("click", function () {
+            const textField = document.getElementById("text");
+            textField.style.display = "none";
+        });
+    </script>
+</body>
+
+</html>
